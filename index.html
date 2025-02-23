@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="text"><p>Calculate Your EMI</p></div>
+        <div id="box">
+            <input id="in1" type="number" placeholder="Enter principal amount">
+            <input id="in2" type="number" placeholder="Enter interest rate">
+            <input id="in3" type="number" placeholder="Enter number of years">   
+            <button onclick="calculateLoan()">Calculate</button>
+        </div>
+        <p id="result"></p>
+    </div>
+    
+</body>
+<script>
+    function calculateSimpleInterest() {
+        let principal = parseFloat(document.getElementById('in1').value);
+        let interestRate = parseFloat(document.getElementById('in2').value);
+        let years = parseFloat(document.getElementById('in3').value);
+
+        let simpleInterest = (principal * interestRate * years) / 100;
+        let totalAmount = principal + simpleInterest;
+
+        alert(`
+            Simple Interest: ₹${simpleInterest.toFixed(2)}
+            Total Amount: ₹${totalAmount.toFixed(2)}
+             `);
+    }
+</script>
+</html>
